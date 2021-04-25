@@ -77,7 +77,7 @@
                             <h3 class="mb-0">Aliran kas</h3>
                         </div>
                         <div class="col text-right">
-                            <a href="#!" class="btn btn-sm btn-primary">Lihat semua</a>
+                            <a href="<?= base_url('kas_masjid/'); ?>" class="btn btn-sm btn-primary">Lihat semua</a>
                         </div>
                     </div>
 
@@ -94,26 +94,14 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <th scope="row">
-                                    Pemasukan
-                                </th>
-                                <td>
-                                    Infaq kotak amal
-                                </td>
-                                <td>
-                                    <i class="fas fa-arrow-up text-success mr-3"></i> Rp.356.000
-                                </td>
+                                <td>Pemasukan</td>
+                                <td>Infaq kotak amal</td>
+                                <td><i class="fas fa-arrow-up text-success mr-3"></i> Rp.356.000</td>
                             </tr>
                             <tr>
-                                <th scope="row">
-                                    Pengeluaran
-                                </th>
-                                <td>
-                                    Sedekah sembako panti asuhan aisyah batam centre
-                                </td>
-                                <td>
-                                    <i class="fas fa-arrow-down text-warning mr-3"></i> Rp.750.000
-                                </td>
+                                <td>Pengeluaran</td>
+                                <td> Sedekah sembako panti asuhan aisyah batam centre</td>
+                                <td><i class="fas fa-arrow-down text-warning mr-3"></i> Rp.750.000</td>
                             </tr>
 
                         </tbody>

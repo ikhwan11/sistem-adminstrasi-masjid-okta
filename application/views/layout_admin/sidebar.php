@@ -13,52 +13,79 @@
 
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" href="">
+                            <a class="nav-link active" href="<?= base_url('admin/'); ?>">
                                 <i class="ni ni-tv-2 text-primary "></i>
                                 <span class="nav-link-text">Dashboard</span>
                             </a>
                         </li>
                     </ul>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= base_url('kas_masjid/'); ?>">
+                                <i class="fas fa-wallet text-yellow "></i>
+                                <span class="nav-link-text">Kas Masjid</span>
+                            </a>
+                        </li>
+                    </ul>
 
-                    <hr class="my-3">
-                    <h6 class="navbar-heading p-0 text-muted">
-                        <span class="docs-normal">Kas Masjid</span>
-                    </h6>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= base_url('sedekah/'); ?>">
+                                <i class="fas fa-wallet text-orange"></i>
+                                <span class="nav-link-text">Sedekah yatim & duafa</span>
+                            </a>
+                        </li>
+                    </ul>
 
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link" href="">
-                                <i class="fas fa-wallet text-yellow "></i>
-                                <span class="nav-link-text">Pemasukan</span>
+                                <i class="fas fa-donate text-green"></i>
+                                <span class="nav-link-text">Donatur masjid</span>
                             </a>
                         </li>
-
+                    </ul>
+                    <!-- acara -->
+                    <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link" href="">
-                                <i class="fas fa-money-bill-wave-alt text-cyan"></i>
-                                <span class="nav-link-text">Pengeluaran</span>
+                                <i class="fas fa-calendar-alt text-black"></i>
+                                <span class="nav-link-text">Acara</span>
                             </a>
+                        </li>
                     </ul>
+                    <!-- acara end -->
+                    <!-- laporan -->
+
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="">
+                                <i class="fas fa-clipboard text-pink"></i>
+                                <span class="nav-link-text">Buat Laporan</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- laporan end -->
+
                     <!-- ramadhan -->
                     <hr class="my-3">
                     <h6 class="navbar-heading p-0 text-muted">
-                        <span class="docs-normal">Sedekah Yatim & duafa</span>
+                        <span class="docs-normal">Ramadhan</span>
                     </h6>
                     <ul class="navbar-nav mb-md-3">
                         <li class="nav-item">
                             <a class="nav-link" href="">
-                                <i class="fas fa-wallet text-orange"></i>
-                                <span class="nav-link-text">Pemasukan</span>
+                                <i class="fas fa-wallet text-black"></i>
+                                <span class="nav-link-text">Keuangan Ramadhan</span>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="">
-                                <i class="fas fa-money-bill-wave-alt text-pink"></i>
-                                <span class="nav-link-text">Pengeluaran</span>
+                                <i class="fas fa-money-bill-wave-alt text-cyan"></i>
+                                <span class="nav-link-text">Zakat fitrah</span>
                             </a>
                         </li>
                     </ul>
-
                     <!-- ramadhan end -->
 
                     <!-- idul adha -->
@@ -82,27 +109,6 @@
                     </ul>
                     <!-- idul adha end -->
 
-                    <!-- idul adha -->
-                    <hr class="my-3">
-                    <h6 class="navbar-heading p-0 text-muted">
-                        <span class="docs-normal">Ramadhan</span>
-                    </h6>
-                    <ul class="navbar-nav mb-md-3">
-                        <li class="nav-item">
-                            <a class="nav-link" href="">
-                                <i class="fas fa-wallet text-black"></i>
-                                <span class="nav-link-text">Pemasukan</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="">
-                                <i class="fas fa-money-bill-wave-alt text-cyan"></i>
-                                <span class="nav-link-text">pengeluaran</span>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- idul adha end -->
-
                     <!-- organisasi -->
                     <hr class="my-3">
                     <h6 class="navbar-heading p-0 text-muted">
@@ -112,7 +118,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="">
                                 <i class="fas fa-users text-pink"></i>
-                                <span class="nav-link-text">Data User</span>
+                                <span class="nav-link-text">Kelola User</span>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -124,50 +130,6 @@
                     </ul>
                     <!-- organisasi end -->
 
-                    <!-- acara -->
-                    <hr class="my-3">
-                    <h6 class="navbar-heading p-0 text-muted">
-                        <span class="docs-normal">Kelola Acara</span>
-                    </h6>
-                    <ul class="navbar-nav mb-md-3">
-                        <li class="nav-item">
-                            <a class="nav-link" href="">
-                                <i class="fas fa-calendar-alt text-black"></i>
-                                <span class="nav-link-text">Data Acara</span>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- acara end -->
-
-                    <!-- donatur -->
-                    <hr class="my-3">
-                    <h6 class="navbar-heading p-0 text-muted">
-                        <span class="docs-normal">Donatur</span>
-                    </h6>
-                    <ul class="navbar-nav mb-md-3">
-                        <li class="nav-item">
-                            <a class="nav-link" href="">
-                                <i class="fas fa-hand-holding-usd text-green"></i>
-                                <span class="nav-link-text">Data Donatur masjid</span>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- donatur end -->
-
-                    <!-- laporan -->
-                    <hr class="my-3">
-                    <h6 class="navbar-heading p-0 text-muted">
-                        <span class="docs-normal">Laporan</span>
-                    </h6>
-                    <ul class="navbar-nav mb-md-3">
-                        <li class="nav-item">
-                            <a class="nav-link" href="">
-                                <i class="fas fa-clipboard text-pink"></i>
-                                <span class="nav-link-text">Buat Laporan</span>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- laporan end -->
                 </div>
             </div>
         </div>
