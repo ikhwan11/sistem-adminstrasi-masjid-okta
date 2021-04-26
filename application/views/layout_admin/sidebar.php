@@ -39,7 +39,7 @@
 
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="">
+                            <a class="nav-link" href="<?= base_url('donatur/'); ?>">
                                 <i class="fas fa-donate text-green"></i>
                                 <span class="nav-link-text">Donatur masjid</span>
                             </a>
@@ -74,7 +74,7 @@
                     </h6>
                     <ul class="navbar-nav mb-md-3">
                         <li class="nav-item">
-                            <a class="nav-link" href="">
+                            <a class="nav-link" href="<?= base_url('ramadhan/'); ?>">
                                 <i class="fas fa-wallet text-black"></i>
                                 <span class="nav-link-text">Keuangan Ramadhan</span>
                             </a>
