@@ -28,6 +28,17 @@ class Masjid_model extends CI_Model
         $this->db->delete($table);
     }
 
+    // kas
+    public function getKas($limit, $start)
+    {
+        return $this->db->get('tb_transaksi', $limit, $start)->result_array();
+    }
+
+    public function hitungDataKas()
+    {
+        return $this->db->get('tb_transaksi')->num_rows();
+    }
+
     // public function ambil_id_smp($id)
     // {
     //     $hasil = $this->db->where('id_siswa_smp', $id)->get('data_siswa_smp');

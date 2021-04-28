@@ -92,19 +92,19 @@
                                 <th scope="col">Total</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>Pemasukan</td>
-                                <td>Infaq kotak amal</td>
-                                <td><i class="fas fa-arrow-up text-success mr-3"></i> Rp.356.000</td>
-                            </tr>
-                            <tr>
-                                <td>Pengeluaran</td>
-                                <td> Sedekah sembako panti asuhan aisyah batam centre</td>
-                                <td><i class="fas fa-arrow-down text-warning mr-3"></i> Rp.750.000</td>
-                            </tr>
-
-                        </tbody>
+                        <?php foreach ($arus_kas as $kas) : ?>
+                            <tbody>
+                                <tr>
+                                    <td><?= $kas->jenis_transaksi; ?></td>
+                                    <td><?= $kas->keterangan; ?></td>
+                                    <?php if ($kas->jenis_transaksi == 'Pemasukan') { ?>
+                                        <td><i class="fas fa-arrow-up text-success mr-3"></i> Rp. <?= number_format($kas->total, 0, ',', '.'); ?></td>
+                                    <?php } else { ?>
+                                        <td><i class="fas fa-arrow-down text-danger mr-3"></i> Rp. <?= number_format($kas->total, 0, ',', '.'); ?></td>
+                                    <?php } ?>
+                                </tr>
+                            </tbody>
+                        <?php endforeach; ?>
                     </table>
                 </div>
             </div>

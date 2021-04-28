@@ -27,7 +27,7 @@
                         <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="media align-items-center">
                                 <div class="media-body  ml-2  d-none d-lg-block">
-                                    <span class="mb-0 text-sm  font-weight-bold">Okta ainun</span>
+                                    <span class="mb-0 text-sm  font-weight-bold"><?= $this->session->userdata('nama'); ?></span>
                                 </div>
                             </div>
                         </a>
@@ -36,7 +36,7 @@
                                 <i class="ni ni-single-02"></i>
                                 <span>Profil saya</span>
                                 <div class="dropdown-divider"></div>
-                                <a href="#!" class="dropdown-item">
+                                <a href="<?= base_url('auth/logout'); ?>" class="dropdown-item">
                                     <i class="ni ni-user-run"></i>
                                     <span>Logout</span>
                                 </a>

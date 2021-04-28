@@ -7,30 +7,22 @@
                 </div>
             </div>
             <div>
-                <form action="" method="POST">
+                <form action="<?= base_url('kas_masjid/transaksi_masuk_aksi'); ?>" method="POST">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group text-white">
-                                <label for="tipe_transaksi">Transaksi : </label>
-                                <select class="form-control" id="tipe_transaksi" name="tipe_transaksi">
-                                    <option value="">== Pilih jenis transaksi ==</option>
-                                    <option value="Pemasukan">Pemasukan</option>
-                                    <option value="Pengeluaran">Pengeluaran</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group text-white">
-                                <label for="tipe_transaksi">Tanggal :</label>
+                                <label for="tanggal">Tanggal :</label>
                                 <input type="text" class="form-control" id="tanggal_transaksi" name="tanggal_transaksi" value="<?= date('d - m - Y'); ?>" readonly>
+                                <input type="hidden" class="form-control" id="jenis_transaksi" name="jenis_transaksi" value="Pemasukan" readonly>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group text-white">
-                                <label for="tipe_transaksi">Keterangan :</label>
+                                <label for="keterangan">Keterangan :</label>
                                 <textarea type="text" class="form-control" id="ket" name="ket" rows="3"></textarea>
+                                <?php echo form_error('ket', '<span class=" text-small text-danger">', '</span>') ?>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -43,9 +35,10 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group text-white">
-                                <label for="tipe_transaksi">Total Transaksi :</label>
+                                <label for="total_transaksi">Total kas :</label>
                                 <input type="number" class="form-control" id="total_transaksi" name="total_transaksi">
-                                <input type="hidden" class="form-control" id="admin" name="admin">
+                                <?php echo form_error('total_transaksi', '<span class=" text-small text-danger">', '</span>') ?>
+                                <input type="hidden" class="form-control" id="admin" name="admin" value="<?= $this->session->userdata('nama'); ?>">
                             </div>
                         </div>
                     </div>

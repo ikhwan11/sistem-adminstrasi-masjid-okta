@@ -80,7 +80,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">
+                            <a class="nav-link" href="<?= base_url('ramadhan/zakat'); ?>">
                                 <i class="fas fa-money-bill-wave-alt text-cyan"></i>
                                 <span class="nav-link-text">Zakat fitrah</span>
                             </a>

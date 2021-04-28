@@ -42,4 +42,10 @@ class Auth extends CI_Controller
 
         $this->form_validation->set_rules('password', 'Password', 'required', array('required' => '{field} tidak boleh kosong'));
     }
+
+    public function logout()
+    {
+        $this->session->sess_destroy();
+        redirect('beranda/');
+    }
 }
