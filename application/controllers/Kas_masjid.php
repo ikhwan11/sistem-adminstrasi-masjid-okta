@@ -19,7 +19,7 @@ class Kas_masjid extends CI_Controller
             'arus_kas' => $this->masjid_model->getKas($config['per_page'], $data['start']),
             'start' => $this->uri->segment(3),
             'pemasukan' => $this->db->query("SELECT SUM(total_kas) AS total_kas FROM tb_kas")->row(),
-            'pengeluaran' => $this->db->query("SELECT SUM(total) AS total FROM tb_transaksi WHERE jenis_transaksi ='Pengeluaran'")->row(),
+            'pengeluaran' => $this->db->query("SELECT SUM(total) AS total FROM tb_transaksi WHERE jenis_transaksi ='Pengeluaran' AND tipe ='Kas'")->row(),
         );
         $page['title'] = 'Admin-Kelola kas';
         $this->load->view('layout_admin/head', $page);
@@ -60,6 +60,7 @@ class Kas_masjid extends CI_Controller
                 'keterangan'        => $ket,
                 'total'             => $total_transaksi,
                 'nama_admin'        => $admin,
+                'tipe'              => 'as',
             );
 
             $data2 = array(

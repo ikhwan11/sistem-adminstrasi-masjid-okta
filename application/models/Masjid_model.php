@@ -38,6 +38,17 @@ class Masjid_model extends CI_Model
     {
         return $this->db->get('tb_transaksi')->num_rows();
     }
+    // sedekah
+    public function getDana($limit, $start)
+    {
+        return $this->db->query("SELECT * FROM tb_transaksi WHERE tipe = 'Sedekah'", $limit, $start)->result_array();
+    }
+    public function hitungDataDana()
+    {
+        return $this->db->query("SELECT * FROM tb_transaksi WHERE tipe = 'Sedekah'")->num_rows();
+    }
+
+
 
     // public function ambil_id_smp($id)
     // {

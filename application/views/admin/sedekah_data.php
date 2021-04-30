@@ -11,13 +11,21 @@
                     <div class="card-header border-0">
                         <div class="row align-items-center">
                             <div class="col">
-                                <h3 class="mb-0">Arus kas</h3>
+                                <h3 class="mb-0">Data dana sedekah anak yatim dan duafa</h3>
+                                <?php echo $this->session->flashdata('pesan') ?>
                             </div>
                         </div>
 
                     </div>
-                    <div class="col-md-3">
-                        <a href="<?= base_url('sedekah/kelola_dana'); ?>" class="btn bg-gradient-pink text-white btn-block text-left mb-2"><i class="fas fa-plus"></i> Kelola Dana</a>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <a href="<?= base_url('sedekah/kelola_dana_masuk'); ?>" class="btn bg-gradient-pink text-white btn-block text-left mb-2"><i class="fas fa-plus"></i> Kelola Dana Pemasukan</a>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="<?= base_url('sedekah/kelola_dana_keluar'); ?>" class="btn bg-gradient-orange text-white btn-block text-left mb-2"><i class="fas fa-plus"></i> Kelola Dana Pengeluaran</a>
+                            </div>
+                        </div>
                     </div>
                     <div class="table-responsive">
                         <!-- Projects table -->
@@ -25,26 +33,33 @@
                             <thead class="thead-light">
                                 <tr>
                                     <th scope="col">No</th>
+                                    <th scope="col">Admin</th>
+                                    <th scope="col">Tanggal</th>
                                     <th scope="col">Tipe Dana</th>
                                     <th scope="col">Keterangan</th>
                                     <th scope="col">Total</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Pemasukan</td>
-                                    <td>Kotak amal sedekah harian</td>
-                                    <td><i class="fas fa-arrow-up text-success mr-3"></i> Rp.356.000</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Pengeluaran</td>
-                                    <td> Sedekah sembako panti asuhan aisyah batam centre</td>
-                                    <td><i class="fas fa-arrow-down text-warning mr-3"></i> Rp.750.000</td>
-                                </tr>
-                            </tbody>
+                            <?php foreach ($dana as $kas) : ?>
+                                <tbody>
+                                    <tr>
+                                        <td><?= ++$start; ?></td>
+                                        <td><?= $kas['nama_admin']; ?></td>
+                                        <td><?= $kas['tanggal']; ?></td>
+                                        <td><?= $kas['jenis_transaksi']; ?></td>
+                                        <td><?= $kas['keterangan']; ?></td>
+                                        <?php if ($kas['jenis_transaksi'] == 'Pemasukan') { ?>
+                                            <td><i class="fas fa-arrow-up text-success mr-3"></i> Rp. <?= number_format($kas['total'], 0, ',', '.'); ?></td>
+                                        <?php } else { ?>
+                                            <td><i class="fas fa-arrow-down text-danger mr-3"></i> Rp. <?= number_format($kas['total'], 0, ',', '.'); ?></td>
+                                        <?php } ?>
+                                    </tr>
+                                </tbody>
+                            <?php endforeach; ?>
                         </table>
+                        <div class="col">
+                            <?= $this->pagination->create_links();; ?>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -56,8 +71,13 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-8">
-                                        <h5 class="card-title text-uppercase text-muted mb-0">Total Dana Sedekah Masuk</h5>
-                                        <span class="h2 font-weight-bold mb-0">Rp.356.000</span>
+                                        <h5 class="card-title text-uppercase text-muted mb-0">Saldo Dana Sedekah yatim & duafa</h5>
+                                        <span class="h2 font-weight-bold mb-0">
+                                            <?php
+                                            $hasil = $pemasukan->total_kas - $pengeluaran->total;
+                                            echo 'Rp. ' . number_format($hasil, 0, ',', '.');
+                                            ?>
+                                        </span>
                                     </div>
                                     <div class="col-md-4 text-right">
                                         <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
@@ -75,7 +95,7 @@
                                 <div class="row">
                                     <div class="col-md-8">
                                         <h5 class="card-title text-uppercase text-muted mb-0">Total Dana Sedekah Keluar</h5>
-                                        <span class="h2 font-weight-bold mb-0">Rp.750.000</span>
+                                        <span class="h2 font-weight-bold mb-0">Rp. <?= number_format($pengeluaran->total, 0, ',', '.'); ?></span></span>
                                     </div>
                                     <div class="col-md-4 text-right">
                                         <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
