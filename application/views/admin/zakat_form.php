@@ -7,12 +7,13 @@
                 </div>
             </div>
             <div>
-                <form action="" method="POST">
+                <form action="<?= base_url('ramadhan/input_zakat'); ?>" method="POST">
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group text-white">
                                 <label for="tipe_transaksi">Tanggal :</label>
-                                <input type="text" class="form-control" id="tanggal_transaksi" name="tanggal_transaksi" value="<?= date('d - m - Y'); ?>" readonly>
+                                <input type="date" class="form-control" id="tanggal_transaksi" name="tanggal_transaksi">
+                                <?php echo form_error('tanggal_transaksi', '<span class=" text-small text-danger">', '</span>') ?>
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -20,44 +21,42 @@
                                 <label for="merk_beras">Merk Beras : </label>
                                 <select class="form-control" id="merk_beras" name="merk_beras">
                                     <option value="">== Pilih Merk Beras ==</option>
-                                    <option value="Pemasukan">Topi Koki</option>
-                                    <option value="Pengeluaran">Anak Ajaib</option>
+                                    <option value="Beras Cap Topi Koki">Beras Cap Topi Koki</option>
+                                    <option value="Beras Cap Sumo">Beras Cap Sumo</option>
+                                    <option value="Beras Cap Hotel">Beras Cap Hotel</option>
+                                    <option value="Beras Merk Finna">Beras Merk Finna</option>
+                                    <option value="Beras Cap Anak Raja">Beras Cap Anak Raja</option>
                                 </select>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group text-white">
-                                <label for="pemberi">Pemberi zakat :</label>
-                                <input type="number" class="form-control" id="pemberi" name="pemberi">
+                                <?php echo form_error('merk_beras', '<span class=" text-small text-danger">', '</span>') ?>
                             </div>
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group text-white">
-                                <label for="zakat_untuk">Zakat untuk :</label>
-                                <input type="number" class="form-control" id="zakat_untuk" name="zakat_untuk">
+                                <label for="pemberi">Nama Pemberi :</label>
+                                <input type="text" class="form-control" id="pemberi" name="pemberi" value="<?= set_value('pemberi'); ?>">
+                                <?php echo form_error('pemberi', '<span class=" text-small text-danger">', '</span>') ?>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group text-white">
-                                <label for="berat_beras">Berat Beras : </label>
-                                <select class="form-control" id="berat_beras" name="berat_beras">
-                                    <option value="">== Pilih Berat Beras ==</option>
-                                    <option value="2,5">2,5 Kg</option>
-                                    <option value="5">5 Kg</option>
-                                </select>
+                                <label for="zakat_untuk">Anggota Zakat :</label>
+                                <input type="number" class="form-control" id="anggota" name="anggota">
+                                <?php echo form_error('anggota', '<span class=" text-small text-danger">', '</span>') ?>
                             </div>
                         </div>
                     </div>
+                    <!-- <input type="submit" name="hitung" value="Hitung" class="btn bg-gradient-orange text-white">
+                    <p></p> -->
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group text-white">
-                                <label for="total_harga">Total Harga :</label>
-                                <input type="number" class="form-control" id="total_harga" name="total_harga">
-                                <input type="hidden" class="form-control" id="admin" name="admin">
+                                <label for="total_harga">Total :</label>
+                                <input type="number" class="form-control" id="total_harga" name="total_harga" value="">
+                                <?php echo form_error('total_harga', '<span class=" text-small text-danger">', '</span>') ?>
                             </div>
+                            <input type="hidden" class="form-control" id="admin" name="admin" value="<?= $this->session->userdata('nama'); ?>">
                         </div>
                     </div>
                     <button type="submit" class="btn bg-gradient-green text-white">Submit</button>

@@ -3,32 +3,24 @@
         <div class="header-body">
             <div class="row align-items-center py-4">
                 <div class="col-lg-6 col-7">
-                    <h6 class="h2 text-white d-inline-block mb-0"><i class="fas fa-home"></i> From tambah transaksi ramadhan</h6>
+                    <h6 class="h2 text-white d-inline-block mb-0"><i class="fas fa-home"></i> Form Pemasukan Ramadhan</h6>
                 </div>
             </div>
             <div>
-                <form action="" method="POST">
+                <form action="<?= base_url('ramadhan/pemasukan_aksi'); ?>" method="POST">
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group text-white">
-                                <label for="tipe_transaksi">Transaksi : </label>
-                                <select class="form-control" id="tipe_transaksi" name="tipe_transaksi">
-                                    <option value="">== Pilih jenis transaksi ==</option>
-                                    <option value="Pemasukan">Pemasukan</option>
-                                    <option value="Pengeluaran">Pengeluaran</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group text-white">
                                 <label for="tipe_transaksi">Tanggal :</label>
-                                <input type="text" class="form-control" id="tanggal_transaksi" name="tanggal_transaksi" value="<?= date('d - m - Y'); ?>" readonly>
+                                <input type="date" class="form-control" id="tanggal_transaksi" name="tanggal_transaksi" value="<?= set_value('tanggal_transaksi'); ?>">
+                                <?php echo form_error('tanggal_transaksi', '<span class=" text-small text-danger">', '</span>') ?>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group text-white">
                                 <label for="tipe_transaksi">Ramadhan ke :</label>
-                                <input type="number" class="form-control" id="tanggal_ramadhan" name="tanggal_ramadhan">
+                                <input type="number" class="form-control" id="hijriah" name="hijriah" value="<?= set_value('hijriah'); ?>">
+                                <?php echo form_error('hijriah', '<span class=" text-small text-danger">', '</span>') ?>
                             </div>
                         </div>
                     </div>
@@ -36,13 +28,14 @@
                         <div class="col-md-6">
                             <div class="form-group text-white">
                                 <label for="tipe_transaksi">Keterangan :</label>
-                                <textarea type="text" class="form-control" id="ket" name="ket" rows="3"></textarea>
+                                <textarea type="text" class="form-control" id="ket" name="ket" rows="3"><?= set_value('ket'); ?></textarea>
+                                <?php echo form_error('ket', '<span class=" text-small text-danger">', '</span>') ?>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <label for="tipe_transaksi"></label>
                             <small class="form-text text-muted text-white">Masukkan keterangan transaksi dengan singkat dan jelas. contoh :
-                                <p><small><i>"biaya pembelian takjil"</i></small></p>
+                                <p><small><i>"infaq ramadhan"</i></small></p>
                             </small>
                         </div>
                     </div>
@@ -50,8 +43,9 @@
                         <div class="col-md-6">
                             <div class="form-group text-white">
                                 <label for="tipe_transaksi">Total Transaksi :</label>
-                                <input type="number" class="form-control" id="total_transaksi" name="total_transaksi">
-                                <input type="hidden" class="form-control" id="admin" name="admin">
+                                <input type="number" class="form-control" id="total_transaksi" name="total_transaksi" value="<?= set_value('total_transaksi'); ?>">
+                                <?php echo form_error('total_transaksi', '<span class=" text-small text-danger">', '</span>') ?>
+                                <input type="hidden" class="form-control" id="admin" name="admin" value="<?= $this->session->userdata('nama'); ?>">
                             </div>
                         </div>
                     </div>

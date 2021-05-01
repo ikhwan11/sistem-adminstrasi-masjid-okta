@@ -12,6 +12,7 @@
                         <div class="row align-items-center">
                             <div class="col">
                                 <h3 class="mb-0">Data Zakat fitrah</h3>
+                                <?php echo $this->session->flashdata('pesan') ?>
                             </div>
                         </div>
 
@@ -29,32 +30,31 @@
                                     <th scope="col">Pemberi</th>
                                     <th scope="col">Zakat untuk</th>
                                     <th scope="col">Tanggal</th>
-                                    <th scope="col">Jenis Beras</th>
-                                    <th scope="col">Berat</th>
+                                    <th scope="col">Merk Beras</th>
                                     <th scope="col">Total harga</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Okta Ainun Anggraini</td>
-                                    <td>Luyanto S.temat</td>
-                                    <td>Luyanto S.temat</td>
-                                    <td>25-april-2021</td>
-                                    <td>Topi koki</td>
-                                    <td>2,5 Kg</td>
-                                    <td>Rp.35000</td>
-                                </tr>
-                            </tbody>
+                            <?php foreach ($zakat as $z) : ?>
+                                <tbody>
+                                    <tr>
+                                        <td><?= ++$start; ?></td>
+                                        <td><?= $z['admin']; ?></td>
+                                        <td><?= $z['nama_pemberi']; ?></td>
+                                        <td><?= $z['jumlah_anggota']; ?> Orang</td>
+                                        <td><?= $z['tanggal']; ?></td>
+                                        <td><?= $z['merk_beras']; ?></td>
+                                        <td><?= $z['total_harga']; ?></td>
+                                    </tr>
+                                </tbody>
+                            <?php endforeach; ?>
                         </table>
                     </div>
                 </div>
             </div>
-            <div class="container">
+            <!-- <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="card card-stats">
-                            <!-- Card body -->
+                        <div class="card card-stats">\
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-8">
@@ -71,7 +71,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>

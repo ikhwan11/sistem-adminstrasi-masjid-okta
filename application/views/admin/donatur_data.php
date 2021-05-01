@@ -12,6 +12,7 @@
                         <div class="row align-items-center">
                             <div class="col">
                                 <h3 class="mb-0">Data Donatur</h3>
+                                <?php echo $this->session->flashdata('pesan') ?>
                             </div>
                         </div>
 
@@ -25,20 +26,27 @@
                             <thead class="thead-light">
                                 <tr>
                                     <th scope="col">No</th>
+                                    <th scope="col">Tanggal</th>
                                     <th scope="col">Atas Nama</th>
                                     <th scope="col">Alamat</th>
                                     <th scope="col">Total</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>h. hardiansyah putro</td>
-                                    <td>Taman mediterania Blok EE No 2</td>
-                                    <td>Rp.1.356.000</td>
-                                </tr>
-                            </tbody>
+                            <?php foreach ($donatur as $don) : ?>
+                                <tbody>
+                                    <tr>
+                                        <td><?= ++$start; ?></td>
+                                        <td><?= $don['tanggal']; ?></td>
+                                        <td><?= $don['nama']; ?></td>
+                                        <td><?= $don['alamat']; ?></td>
+                                        <td>Rp. <?= number_format($don['total'], 0, ',', '.'); ?></td>
+                                    </tr>
+                                </tbody>
+                            <?php endforeach; ?>
                         </table>
+                        <div class="col">
+                            <?= $this->pagination->create_links();; ?>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -51,7 +59,7 @@
                                 <div class="row">
                                     <div class="col-md-8">
                                         <h5 class="card-title text-uppercase text-muted mb-0">Total Donatur masuk</h5>
-                                        <span class="h2 font-weight-bold mb-0">Rp.356.000</span>
+                                        <span class="h2 font-weight-bold mb-0">Rp. <?= number_format($pemasukan->total, 0, ',', '.'); ?></span>
                                     </div>
                                     <div class="col-md-4 text-right">
                                         <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">

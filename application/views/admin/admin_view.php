@@ -9,14 +9,19 @@
             </div>
             <!-- Card stats -->
             <div class="row">
-                <div class="col-xl-3 col-md-6">
-                    <div class="card card-stats">
+                <div class="col-xl-3 col-md-6 ">
+                    <div class="card card-stats ">
                         <!-- Card body -->
-                        <div class="card-body">
+                        <div class="card-body ">
                             <div class="row">
                                 <div class="col">
-                                    <h5 class="card-title text-uppercase text-muted mb-0">kotak amal</h5>
-                                    <span class="h2 font-weight-bold mb-0">Rp. 18.553.300</span>
+                                    <h5 class="card-title text-uppercase text-muted mb-0 n">Saldo kas tersisa</h5>
+                                    <span class="h4 font-weight-bold mb-0 text-green">
+                                        <?php
+                                        $hasil = $kas_masuk->total_kas - $kas_keluar->total;
+                                        echo 'Rp. ' . number_format($hasil, 0, ',', '.');
+                                        ?>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -28,8 +33,13 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col">
-                                    <h5 class="card-title text-uppercase text-muted mb-0">anak yatim & duafa</h5>
-                                    <span class="h2 font-weight-bold mb-0">Rp. 10.023.000</span>
+                                    <h5 class="card-title text-uppercase text-muted mb-0 ">saldo anak yatim & duafa</h5>
+                                    <span class="h4 font-weight-bold mb-0 text-orange">
+                                        <?php
+                                        $hasil = $sedekah_masuk->total_kas - $sedekah_keluar->total;
+                                        echo 'Rp. ' . number_format($hasil, 0, ',', '.');
+                                        ?>
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -41,8 +51,8 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col">
-                                    <h5 class="card-title text-uppercase text-muted mb-0">Donatur pembangunan</h5>
-                                    <span class="h2 font-weight-bold mb-0">Rp. 25.500.000</span>
+                                    <h5 class="card-title text-uppercase text-muted mb-0">Total Donatur pembangunan</h5>
+                                    <span class="h4 font-weight-bold mb-0 text-pink">Rp. <?= number_format($donatur->total, 0, ',', '.'); ?></span>
                                 </div>
                             </div>
                         </div>
@@ -55,7 +65,7 @@
                             <div class="row">
                                 <div class="col">
                                     <h5 class="card-title text-uppercase text-muted mb-0">Staff/pengurus masjid</h5>
-                                    <span class="h2 font-weight-bold mb-0">15 orang</span>
+                                    <span class="h4 font-weight-bold mb-0">15 orang</span>
                                 </div>
                             </div>
                         </div>

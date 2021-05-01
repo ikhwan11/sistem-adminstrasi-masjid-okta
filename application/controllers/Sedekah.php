@@ -23,7 +23,7 @@ class Sedekah extends CI_Controller
 
             'pengeluaran' => $this->db->query("SELECT SUM(total) AS total FROM tb_transaksi WHERE tipe = 'Sedekah' AND jenis_transaksi ='Pengeluaran'")->row(),
         );
-        $page['title'] = 'Kelola kas';
+        $page['title'] = 'Admin-Sedekah Yatim & Duafa';
         $this->load->view('layout_admin/head', $page);
         $this->load->view('layout_admin/sidebar');
         $this->load->view('layout_admin/header');
@@ -36,7 +36,7 @@ class Sedekah extends CI_Controller
     public function kelola_dana_masuk()
     {
 
-        $page['title'] = 'Kelola kas';
+        $page['title'] = 'Sedekah Yatim & Duafa-Pemasukan';
         $this->load->view('layout_admin/head', $page);
         $this->load->view('layout_admin/sidebar');
         $this->load->view('layout_admin/header');
@@ -93,7 +93,7 @@ class Sedekah extends CI_Controller
 
     public function kelola_dana_keluar()
     {
-        $page['title'] = 'Kelola kas';
+        $page['title'] = 'Sedekah Yatim & Duafa-Pengeluaran';
         $this->load->view('layout_admin/head', $page);
         $this->load->view('layout_admin/sidebar');
         $this->load->view('layout_admin/header');

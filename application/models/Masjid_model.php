@@ -48,8 +48,38 @@ class Masjid_model extends CI_Model
         return $this->db->query("SELECT * FROM tb_transaksi WHERE tipe = 'Sedekah'")->num_rows();
     }
 
+    // donatur
+    public function getDon($limit, $start)
+    {
+        return $this->db->get('tb_donatur', $limit, $start)->result_array();
+    }
 
+    public function hitungDataDon()
+    {
+        return $this->db->get('tb_donatur')->num_rows();
+    }
 
+    // ramadhan
+    public function getRamadhan($limit, $start)
+    {
+        return $this->db->get('tb_ramadhan', $limit, $start)->result_array();
+    }
+
+    public function hitungDataRamadhan()
+    {
+        return $this->db->get('tb_ramadhan')->num_rows();
+    }
+
+    // ramadhan
+    public function getZakat($limit, $start)
+    {
+        return $this->db->get('tb_zakat', $limit, $start)->result_array();
+    }
+
+    public function hitungDataZakat()
+    {
+        return $this->db->get('tb_zakat')->num_rows();
+    }
     // public function ambil_id_smp($id)
     // {
     //     $hasil = $this->db->where('id_siswa_smp', $id)->get('data_siswa_smp');
