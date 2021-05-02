@@ -95,7 +95,7 @@
                     </h6>
                     <ul class="navbar-nav mb-md-3">
                         <li class="nav-item">
-                            <a class="nav-link" href="">
+                            <a class="nav-link" href="<?= base_url('idul_adha/'); ?>">
                                 <i class="fas fa-quran text-red"></i>
                                 <span class="nav-link-text">Tabungan kurban</span>
                             </a>

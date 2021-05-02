@@ -42,8 +42,20 @@
                                         <td><?= $z['nama_pemberi']; ?></td>
                                         <td><?= $z['jumlah_anggota']; ?> Orang</td>
                                         <td><?= $z['tanggal']; ?></td>
-                                        <td><?= $z['merk_beras']; ?></td>
-                                        <td><?= $z['total_harga']; ?></td>
+
+                                        <?php if ($z['merk_beras'] == '1') { ?>
+                                            <td>Beras Cap Topi Koki</td>
+                                        <?php } elseif ($z['merk_beras'] == '2') { ?>
+                                            <td>Beras Cap Sumo</td>
+                                        <?php  } elseif ($z['merk_beras'] == '3') { ?>
+                                            <td>Beras Cap Hotel</td>
+                                        <?php  } elseif ($z['merk_beras'] == '4') { ?>
+                                            <td>Beras Merk Finna</td>
+                                        <?php } else { ?>
+                                            <td>Beras Cap Anak Raja</td>
+                                        <?php } ?>
+
+                                        <td>Rp. <?= number_format($z['total_harga'], 0, ',', '.'); ?></td>
                                     </tr>
                                 </tbody>
                             <?php endforeach; ?>
