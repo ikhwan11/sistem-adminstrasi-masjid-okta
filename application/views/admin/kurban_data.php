@@ -31,23 +31,35 @@
                                     <th scope="col">No</th>
                                     <th scope="col">Nama nasabah</th>
                                     <th scope="col">Alamat</th>
-                                    <th scope="col">No Hp</th>
+                                    <th scope="col">Tanggal lahir</th>
+                                    <th scope="col">Jenis</th>
                                     <th scope="col">Aksi</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>acong</td>
-                                    <td>batam centre</td>
-                                    <td>098766778888</td>
-                                    <td>
-                                        <a href="<?= base_url('idul_adha/detail'); ?>" class="btn btn-sm bg-gradient-yellow text-white">Detail</a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                            <?php foreach ($nasabah as $n) : ?>
+                                <tbody>
+                                    <tr>
+                                        <td><?= ++$start; ?></td>
 
+                                        <?php if ($n['jenis_kelamin'] == 'Laki-laki') { ?>
+                                            <td>Bpk. <?= $n['nama']; ?></td>
+                                        <?php } else { ?>
+                                            <td>Ibu. <?= $n['nama']; ?></td>
+                                        <?php } ?>
+
+                                        <td><?= $n['alamat']; ?></td>
+                                        <td><?= $n['tanggal_lahir']; ?></td>
+                                        <td><?= $n['kurban']; ?></td>
+                                        <td>
+                                            <a href="<?= base_url('idul_adha/detail_nasabah/') . $n['id_nasabah']; ?>" class="btn btn-sm bg-gradient-yellow text-white">Detail</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            <?php endforeach; ?>
+                        </table>
+                        <div class="col">
+                            <?= $this->pagination->create_links();; ?>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -70,7 +70,7 @@ class Masjid_model extends CI_Model
         return $this->db->get('tb_ramadhan')->num_rows();
     }
 
-    // ramadhan
+    // zakat
     public function getZakat($limit, $start)
     {
         return $this->db->get('tb_zakat', $limit, $start)->result_array();
@@ -80,6 +80,25 @@ class Masjid_model extends CI_Model
     {
         return $this->db->get('tb_zakat')->num_rows();
     }
+
+    // kurban
+    public function getNasabah($limit, $start)
+    {
+        return $this->db->query("SELECT * FROM tb_nasabah WHERE jenis = 'Kurban'", $limit, $start)->result_array();
+    }
+
+    public function hitungDataNasabah()
+    {
+        return $this->db->query("SELECT * FROM tb_nasabah WHERE jenis = 'Kurban'")->num_rows();
+    }
+
+
+
+
+
+
+
+
     // public function ambil_id_smp($id)
     // {
     //     $hasil = $this->db->where('id_siswa_smp', $id)->get('data_siswa_smp');

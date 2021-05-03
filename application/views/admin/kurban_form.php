@@ -7,7 +7,7 @@
                 </div>
             </div>
             <div>
-                <form action="<?= base_url(''); ?>" method="POST">
+                <form action="<?= base_url('idul_adha/tambah_nasabah_aksi'); ?>" method="POST">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group text-white">
@@ -18,9 +18,13 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group text-white">
-                                <label for="tipe_transaksi">No Hp :</label>
-                                <input type="number" class="form-control" id="np_hp" name="np_hp" autocomplete="off" value="<?= set_value('nama'); ?>">
-                                <?php echo form_error('no_hp', '<span class=" text-small text-danger">', '</span>') ?>
+                                <label for="tipe_transaksi">Jenis Kelamin :</label>
+                                <select type="text" class="form-control" id="jk" name="jk">
+                                    <option value="">== Pilih jenis kelamin ==</option>
+                                    <option value="Laki-laki">Laki-laki</option>
+                                    <option value="Perempuan">Perempuan</option>
+                                </select>
+                                <?php echo form_error('jk', '<span class=" text-small text-danger">', '</span>') ?>
                             </div>
                         </div>
                     </div>
@@ -32,8 +36,26 @@
                                 <?php echo form_error('tl', '<span class=" text-small text-danger">', '</span>') ?>
                             </div>
                         </div>
+                        <div class="col-md-6">
+                            <div class="form-group text-white">
+                                <label for="tipe_transaksi">No Hp :</label>
+                                <input type="number" class="form-control" id="no_hp" name="no_hp" autocomplete="off" value="<?= set_value('no_hp'); ?>">
+                                <?php echo form_error('no_hp', '<span class=" text-small text-danger">', '</span>') ?>
+                            </div>
+                        </div>
                     </div>
                     <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group text-white">
+                                <label for="tipe_transaksi">Jenis Hewan Kurban :</label>
+                                <select type="text" class="form-control" id="hk" name="hk">
+                                    <option value="">== Pilih Hewan ==</option>
+                                    <option value="Kambing">Kambing</option>
+                                    <option value="Sapi">Sapi</option>
+                                </select>
+                                <?php echo form_error('hk', '<span class=" text-small text-danger">', '</span>') ?>
+                            </div>
+                        </div>
                         <div class="col-md-6">
                             <div class="form-group text-white">
                                 <label for="tipe_transaksi">Alamat :</label>
