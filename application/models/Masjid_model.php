@@ -92,6 +92,16 @@ class Masjid_model extends CI_Model
         return $this->db->query("SELECT * FROM tb_nasabah WHERE jenis = 'Kurban'")->num_rows();
     }
 
+    // haji
+    public function getHaji($limit, $start)
+    {
+        return $this->db->query("SELECT * FROM tb_nasabah WHERE jenis = 'Haji'", $limit, $start)->result_array();
+    }
+
+    public function hitungDataHaji()
+    {
+        return $this->db->query("SELECT * FROM tb_nasabah WHERE jenis = 'Haji'")->num_rows();
+    }
 
 
 

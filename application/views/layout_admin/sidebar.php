@@ -101,7 +101,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">
+                            <a class="nav-link" href="<?= base_url('idul_adha/haji'); ?>">
                                 <i class="fas fa-kaaba text-blue"></i>
                                 <span class="nav-link-text">Tabungan haji</span>
                             </a>
@@ -116,13 +116,13 @@
                     </h6>
                     <ul class="navbar-nav mb-md-3">
                         <li class="nav-item">
-                            <a class="nav-link" href="">
+                            <a class="nav-link" href="<?= base_url('user/'); ?>">
                                 <i class="fas fa-users text-pink"></i>
                                 <span class="nav-link-text">Kelola User</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">
+                            <a class="nav-link" href="<?= base_url('user/pengurus'); ?>">
                                 <i class="fas fa-mosque text-cyan"></i>
                                 <span class="nav-link-text">Data pengurus masjid</span>
                             </a>
