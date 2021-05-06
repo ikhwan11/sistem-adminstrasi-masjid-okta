@@ -109,9 +109,9 @@ class Masjid_model extends CI_Model
 
 
 
-    // public function ambil_id_smp($id)
+    // public function ambil_id_user($id)
     // {
-    //     $hasil = $this->db->where('id_siswa_smp', $id)->get('data_siswa_smp');
+    //     $hasil = $this->db->where('id_user', $id)->get('tb_user');
     //     if ($hasil->num_rows() > 0) {
     //         return $hasil->result();
     //     } else {
@@ -126,7 +126,7 @@ class Masjid_model extends CI_Model
 
         $result = $this->db
             ->where('username', $username)
-            ->where('password', $password)
+            ->where('password', md5($password))
             ->limit(1)
             ->get('tb_user');
 

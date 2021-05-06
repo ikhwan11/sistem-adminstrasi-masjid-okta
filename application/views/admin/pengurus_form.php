@@ -7,7 +7,7 @@
                 </div>
             </div>
             <div>
-                <form action="<?= base_url(''); ?>" method="POST">
+                <form action="<?= base_url('user/tambah_pengurus_aksi'); ?>" method="POST">
                     <h2 class="text-white"><u>Informasi diri :</u></h2>
                     <div class="row">
                         <div class="col-md-6">
@@ -20,8 +20,8 @@
                         <div class="col-md-6">
                             <div class="form-group text-white">
                                 <label>Nama Panggilan :</label>
-                                <input type="text" class="form-control" id="nama_s" name="nama_s" autocomplete="off" value="<?= set_value('nama_s'); ?>" autofocus>
-                                <?php echo form_error('nama_s', '<span class=" text-small text-danger">', '</span>') ?>
+                                <input type="text" class="form-control" id="panggilan" name="panggilan" autocomplete="off" value="<?= set_value('panggilan'); ?>" autofocus>
+                                <?php echo form_error('panggilan', '<span class=" text-small text-danger">', '</span>') ?>
                             </div>
                         </div>
                     </div>
@@ -59,7 +59,6 @@
                             <div class="form-group text-white">
                                 <label>Email :</label>
                                 <input type="email" class="form-control" id="email" name="email" autocomplete="off" value="<?= set_value('email'); ?>">
-                                <?php echo form_error('email', '<span class=" text-small text-danger">', '</span>') ?>
                                 <span><small class="text-muted text-yellow"> * isi jika ada</small></span>
                             </div>
                         </div>
@@ -68,7 +67,24 @@
                         <div class="col-md-6">
                             <div class="form-group text-white">
                                 <label>Jabatan :</label>
-                                <input type="text" class="form-control" id="jabatan" name="jabatan" value="<?= set_value('jabatan'); ?>">
+                                <select type="text" class="form-control" id="jabatan" name="jabatan">
+                                    <option value="">== Pilih jabatan ==</option>
+                                    <option value="Ketua">Ketua yayasan</option>
+                                    <option value="Bendahara">Bendahara</option>
+                                    <option value="Sekretaris">Sekretaris</option>
+                                    <option value="seksi perencanaan">seksi perencanaan</option>
+                                    <option value="seksi adminstrasi">seksi adminstrasi</option>
+                                    <option value="seksi dokumen">seksi dokumen</option>
+                                    <option value="seksi peribadatan">seksi peribadatan</option>
+                                    <option value="seksi pendidikan & keterampilan">seksi pendidikan & keterampilan</option>
+                                    <option value="seksi PHBI & dakwah">seksi PHBI & dakwah</option>
+                                    <option value="seksi ZIS & wakaf">seksi ZIS & wakaf</option>
+                                    <option value="seksi Remaja masjid">seksi Remaja masjid</option>
+                                    <option value="seksi pemeliharaan bangunan & kebersihan">seksi pemeliharaan bangunan & kebersihan</option>
+                                    <option value="seksi peralatan & perlengkapan">seksi peralatan & perlengkapan</option>
+                                    <option value="seksi lingkungan & pertamanan">seksi lingkungan & pertamanan</option>
+                                    <option value="seksi keamanan">seksi keamanan</option>
+                                </select>
                                 <?php echo form_error('jabatan', '<span class=" text-small text-danger">', '</span>') ?>
                             </div>
                         </div>
@@ -91,60 +107,7 @@
                             </div>
                         </div>
                     </div>
-                    <hr>
-                    <!-- keluarga -->
-                    <h2 class="text-white"><u>Informasi data keluarga :</u></h2>
-                    <p class="text-yellow">silakan isi jika ada</p>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group text-white">
-                                <label>Nama lengkap :</label>
-                                <input type="text" class="form-control" id="pasangan" name="pasangan" value="<?= set_value('pasangan'); ?>">
-                                <?php echo form_error('pasangan', '<span class=" text-small text-danger">', '</span>') ?>
-                                <span><small class="text-muted text-yellow"> * Nama lengkap pasangan</small></span>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group text-white">
-                                <label>Hubungan :</label>
-                                <select type="text" class="form-control" id="hub" name="hub">
-                                    <option value="">== Pilih Hubungan ==</option>
-                                    <option value="Suami">Suami</option>
-                                    <option value="Istri">Istri</option>
-                                </select>
-                                <?php echo form_error('hub', '<span class=" text-small text-danger">', '</span>') ?>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group text-white">
-                                <label>Anak Pertama :</label>
-                                <input type="text" class="form-control" id="pasangan" name="pasangan" value="<?= set_value('pasangan'); ?>">
-                                <?php echo form_error('pasangan', '<span class=" text-small text-danger">', '</span>') ?>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group text-white">
-                                <label>Jenis Kelamin :</label>
-                                <select type="text" class="form-control" id="jk2" name="jk2">
-                                    <option value="">== Pilih jenis kelamin ==</option>
-                                    <option value="Laki-laki">Laki-laki</option>
-                                    <option value="Perempuan">Perempuan</option>
-                                </select>
-                                <?php echo form_error('jk2', '<span class=" text-small text-danger">', '</span>') ?>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="form-group text-white">
-                                <label>No yang bisa dihubungi :</label>
-                                <input type="number" class="form-control" id="no_hub" name="no_hub" autocomplete="off" value="<?= set_value('no_hub'); ?>">
-                                <?php echo form_error('no_hub', '<span class=" text-small text-danger">', '</span>') ?>
-                            </div>
-                        </div>
-                    </div>
+
                     <button type="submit" class="btn bg-gradient-green text-white">Tambah</button>
                     <a href="<?= base_url('user/pengurus'); ?>" class="btn bg-gradient-yellow text-white">Kembali</a>
                     <span><small class="text-muted text-white"> * Tekan tombol tambah untuk menyimpan Data</small></span>

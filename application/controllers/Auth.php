@@ -16,7 +16,7 @@ class Auth extends CI_Controller
             $this->load->view('form_login');
         } else {
             $username  = $this->input->post('username');
-            $password  = $this->input->post('password');
+            $password  = md5($this->input->post('password'));
 
             $cek = $this->masjid_model->cek_login($username, $password);
 
