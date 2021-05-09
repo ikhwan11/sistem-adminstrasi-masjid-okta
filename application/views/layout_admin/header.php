@@ -33,11 +33,9 @@
                         </a>
                         <div class="dropdown-menu  dropdown-menu-right ">
                             <a href="#!" class="dropdown-item">
-                                <i class="ni ni-single-02"></i>
-                                <span>Profil saya</span>
                                 <div class="dropdown-divider"></div>
                                 <a href="<?= base_url('auth/logout'); ?>" class="dropdown-item">
-                                    <i class="ni ni-user-run"></i>
+                                    <i class="fas fa-sign-out-alt"></i>
                                     <span>Logout</span>
                                 </a>
                         </div>

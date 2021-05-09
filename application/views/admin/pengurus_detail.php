@@ -14,11 +14,22 @@
                                 <div class="card-header border-0">
                                     <div class="row">
                                         <div class="col-md-5">
-                                            <img src="<?= base_url('assets/beranda/img/team/team-3.jpg'); ?>" class="rounded float-left" width="300">
+                                            <?php if ($p['foto'] == !null) { ?>
+                                                <img src="<?= base_url('assets/foto_staff/') . $p['foto']; ?>" class="rounded float-left" width="300">
+                                            <?php } else if ($p['jenis_kelamin'] == 'Laki-laki') { ?>
+                                                <img src="<?= base_url('assets/foto_staff/default_male.jpg'); ?>" class="rounded float-left" width="300">
+                                            <?php } else { ?>
+                                                <img src="<?= base_url('assets/foto_staff/default_female.jpg'); ?>" class="rounded float-left" width="300">
+                                            <?php } ?>
                                         </div>
                                         <div class="col-md-6">
                                             <h1 class="mb-0"><?= $p['nama_lengkap']; ?></h1>
                                             <span><?= $p['jabatan']; ?></span>
+                                        </div>
+                                    </div>
+                                    <div class="container mt-3">
+                                        <div class="row">
+                                            <a href="" class="btn btn-sm bg-gradient-green text-white" data-toggle="modal" data-target="#Foto"><i class="fas fa-camera"></i> Ganti foto</a>
                                         </div>
                                     </div>
                                 </div>
@@ -138,6 +149,30 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
                     <button type="submit" class="btn btn-danger">Hapus</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- modal -->
+<div class="modal fade" id="Foto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-dark" id="exampleModalLabel">Ganti foto profil</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="<?= base_url('user/update_foto'); ?>" method="POST" enctype="multipart/form-data">
+                <div class="modal-body">
+                    <label>Unggah foto baru :</label>
+                    <input type="file" class="form-control" name="foto">
+                    <input type="hidden" class="form-control" name="id" value="<?= $p['id_staff']; ?>">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                    <button type="submit" class="btn btn-info">Unggah</button>
                 </div>
             </form>
         </div>

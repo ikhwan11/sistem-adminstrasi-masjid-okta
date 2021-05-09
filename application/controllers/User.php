@@ -143,7 +143,20 @@ class User extends CI_Controller
             $jabatan              = $this->input->post('jabatan');
             $alamat1              = $this->input->post('alamat1');
             $alamat2              = $this->input->post('alamat2');
+            $foto                 = $_FILES['foto']['name'];
 
+            if ($foto = '') {
+            } else {
+                $config['upload_path']     = './assets/foto_staff';
+                $config['allowed_types']    = 'jpg|jpeg|png';
+
+                $this->load->library('upload', $config);
+                if (!$this->upload->do_upload('foto')) {
+                    echo "Foto gagal di upload!";
+                } else {
+                    $foto = $this->upload->data('file_name');
+                }
+            }
 
             $data = array(
                 'nama_lengkap'      => $nama,
@@ -155,6 +168,7 @@ class User extends CI_Controller
                 'jabatan'           => $jabatan,
                 'alamat_domisili'   => $alamat1,
                 'alamat_asal'       => $alamat2,
+                'foto'              => $foto
             );
 
 
@@ -241,6 +255,40 @@ class User extends CI_Controller
 
         $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
 				  Data pengurus di update berhasil!
+				  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				    <span aria-hidden="true">&times;</span>
+				  </button>
+				</div>');
+        redirect('user/pengurus');
+    }
+
+    public function update_foto()
+    {
+        $id                   = $this->input->post('id');
+        $foto                 = $_FILES['foto']['name'];
+
+        if ($foto = '') {
+        } else {
+            $config['upload_path']     = './assets/foto_staff';
+            $config['allowed_types']    = 'jpg|jpeg|png';
+
+            $this->load->library('upload', $config);
+            if (!$this->upload->do_upload('foto')) {
+                echo "Foto gagal di upload!";
+            } else {
+                $foto = $this->upload->data('file_name');
+            }
+        }
+
+        $data = array('foto' => $foto);
+        $where = array(
+            'id_staff' => $id
+        );
+
+        $this->masjid_model->update_data('tb_staff', $data, $where);
+
+        $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
+				 foto berhasil di update!
 				  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
 				    <span aria-hidden="true">&times;</span>
 				  </button>

@@ -10,6 +10,7 @@ class Auth extends CI_Controller
 
     public function login_aksi()
     {
+
         $this->_rules();
 
         if ($this->form_validation->run() == FALSE) {

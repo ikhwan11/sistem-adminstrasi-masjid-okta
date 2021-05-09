@@ -7,7 +7,7 @@
                 </div>
             </div>
             <div>
-                <form action="<?= base_url('user/tambah_pengurus_aksi'); ?>" method="POST">
+                <form action="<?= base_url('user/tambah_pengurus_aksi'); ?>" method="POST" enctype="multipart/form-data">
                     <h2 class="text-white"><u>Informasi diri :</u></h2>
                     <div class="row">
                         <div class="col-md-6">
@@ -86,6 +86,13 @@
                                     <option value="seksi keamanan">seksi keamanan</option>
                                 </select>
                                 <?php echo form_error('jabatan', '<span class=" text-small text-danger">', '</span>') ?>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group text-white">
+                                <label>PIlih foto :</label>
+                                <input type="file" class="form-control" id="foto" name="foto">
+                                <span><small class="text-muted text-yellow"> * Unggah jika ada</small></span>
                             </div>
                         </div>
                     </div>

@@ -17,6 +17,9 @@ class Admin extends CI_Controller
             // donatur
 
             'donatur' => $this->db->query("SELECT SUM(total) AS total FROM tb_donatur")->row(),
+
+            'organisasi' => $this->masjid_model->get_data('tb_staff')->result_array(),
+            'total_org' => $this->masjid_model->get_data('tb_staff')->num_rows()
         );
         $page['title'] = 'Admin-Dashboard';
         $this->load->view('layout_admin/head', $page);

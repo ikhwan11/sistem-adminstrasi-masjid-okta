@@ -65,7 +65,7 @@
                             <div class="row">
                                 <div class="col">
                                     <h5 class="card-title text-uppercase text-muted mb-0">Staff/pengurus masjid</h5>
-                                    <span class="h4 font-weight-bold mb-0">15 orang</span>
+                                    <span class="h4 font-weight-bold mb-0"><?= $total_org; ?> orang</span>
                                 </div>
                             </div>
                         </div>
@@ -137,25 +137,14 @@
                                 <th scope="col">Jabatan</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">
-                                    H. Ikhwan sulestra, Lc., Ma.
-                                </th>
-                                <td>
-                                    Imam masjid 1
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">
-                                    H. Muhhamad ichsan, S,pd
-                                </th>
-                                <td>
-                                    Imam masjid 2
-                                </td>
-                                <td>
-                            </tr>
-                        </tbody>
+                        <?php foreach ($organisasi as $or) : ?>
+                            <tbody>
+                                <tr>
+                                    <td><?= $or['nama_lengkap']; ?></td>
+                                    <td><?= $or['jabatan']; ?></td>
+                                </tr>
+                            </tbody>
+                        <?php endforeach; ?>
                     </table>
                 </div>
             </div>
