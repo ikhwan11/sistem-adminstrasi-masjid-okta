@@ -60,7 +60,7 @@ class Kas_masjid extends CI_Controller
                 'keterangan'        => $ket,
                 'total'             => $total_transaksi,
                 'nama_admin'        => $admin,
-                'tipe'              => 'as',
+                'tipe'              => 'Kas',
             );
 
             $data2 = array(
@@ -117,6 +117,7 @@ class Kas_masjid extends CI_Controller
                 'keterangan'        => $ket,
                 'total'             => $total_transaksi,
                 'nama_admin'        => $admin,
+                'tipe'              => 'Kas',
             );
 
             $this->masjid_model->insert_data($data1, 'tb_transaksi');

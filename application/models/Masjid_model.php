@@ -103,22 +103,6 @@ class Masjid_model extends CI_Model
         return $this->db->query("SELECT * FROM tb_nasabah WHERE jenis = 'Haji'")->num_rows();
     }
 
-
-
-
-
-
-
-    // public function ambil_id_user($id)
-    // {
-    //     $hasil = $this->db->where('id_user', $id)->get('tb_user');
-    //     if ($hasil->num_rows() > 0) {
-    //         return $hasil->result();
-    //     } else {
-    //         return false;
-    //     }
-    // }
-
     public function cek_login()
     {
         $username = set_value('username');
@@ -137,24 +121,18 @@ class Masjid_model extends CI_Model
         }
     }
 
-    // public function cari($keyword = null)
-    // {
-    //     if ($keyword) {
-    //         $this->db->like('nama', $keyword);
-    //     }
-    //     return $this->db->get('data_siswa_smp')->result_array();
-    // }
+    // front
+    // ---- data nasabah ----
+    public function getNs($limit, $start, $keyword = null)
+    {
+        if ($keyword) {
+            $this->db->like('nama', $keyword);
+        }
+        return $this->db->get('tb_nasabah', $limit, $start)->result_array();
+    }
 
-    // public function update_password($where, $data, $table)
-    // {
-    //     $this->db->where($where);
-    //     $this->db->update($table, $data);
-    // }
-
-    // public function downloadPembayaran($id)
-    // {
-    //     $query = $this->db->get_where('tb_transaksi', array('id_rental' => $id));
-    //     return $query->row_array();
-    // }
-
+    public function hitungNs()
+    {
+        return $this->db->get('tb_nasabah')->num_rows();
+    }
 }
