@@ -57,15 +57,16 @@
 </section><!-- End Hero -->
 
 <main id="main">
-
 	<!-- ======= About Section ======= -->
 	<section id="about" class="about">
 		<div class="container-fluid">
 
 			<div class="row justify-content-center">
+				<div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch">
+					<a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
+				</div>
 
-
-				<div class="col">
+				<div class="col-xl-5 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
 					<h3>Enim quis est voluptatibus aliquid consequatur fugiat</h3>
 					<p>Esse voluptas cumque vel exercitationem. Reiciendis est hic accusamus. Non ipsam et sed minima temporibus laudantium. Soluta voluptate sed facere corporis dolores excepturi. Libero laboriosam sint et id nulla tenetur. Suscipit aut voluptate.</p>
 
@@ -93,5 +94,88 @@
 		</div>
 	</section><!-- End About Section -->
 
+	<!-- ======= Testimonials Section ======= -->
+	<section id="testimonials" class="testimonials section-bg">
+		<div class="container-fluid">
+
+			<div class="section-title">
+				<h2>Acara pada masjid Asy-syuhada</h2>
+				<h3>Ikuti dan<span> hadirilah</span> acara</h3>
+				<p>dengan ikhlas dan penuh iman, mengharapkan rahmat dari Allah Subha nahwa ta'ala</p>
+			</div>
+
+			<div class="row justify-content-center">
+				<div class="col-xl-10">
+
+					<div class="row">
+
+						<div class="col-lg-6">
+							<div class="testimonial-item">
+								<img class="card-img-top" src="<?= base_url('assets/beranda'); ?>/img/test-banner.jpg" alt="Card image cap">
+								<h3>Judul acara</h3>
+								<h4>Tujuan acara</h4>
+								<p>
+									<i class="bx bxs-quote-alt-left quote-icon-left"></i>
+									keterangan
+									<i class="bx bxs-quote-alt-right quote-icon-right"></i>
+								</p><br>
+								<button type="button" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#modalDetail">Detail acara</button>
+							</div>
+						</div><!-- End testimonial-item -->
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</section><!-- End Testimonials Section -->
+
+	<!-- Modal -->
+	<div class="modal fade" id="modalDetail" tabindex="-1" role="dialog" aria-labelledby="modalDetailLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="modalDetailLabel">Detail acara</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<table class="table">
+						<tbody>
+							<tr>
+								<td>Judul acara</td>
+								<td>:</td>
+								<td>Isra' mi'raj</td>
+							</tr>
+							<tr>
+								<td>Tanggal</td>
+								<td>:</td>
+								<td>12-4-2021</td>
+							</tr>
+							<tr>
+								<td>Waktu acara</td>
+								<td>:</td>
+								<td>20:00 - 22:00</td>
+							</tr>
+							<tr>
+								<td>tempat</td>
+								<td>:</td>
+								<td>Masjid Asy-syuhada</td>
+							</tr>
+							<tr>
+								<td>pengisi acara</td>
+								<td>:</td>
+								<td>ustadz Alif </td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-info" data-dismiss="modal">Kembali</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
 </main><!-- End #main -->
