@@ -23,6 +23,14 @@
                         </div>
                     </div>
                     <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group text-white">
+                                <label for="tipe_transaksi">Keterangan singkat:</label>
+                                <textarea type="text" class="form-control" id="ket" name="ket" rows="3" autofocus required><?= set_value('ket'); ?></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
                         <div class="col-md-4">
                             <div class="form-group text-white">
                                 <label for="tipe_transaksi">Tanggal Acara :</label>

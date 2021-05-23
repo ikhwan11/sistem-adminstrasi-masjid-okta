@@ -30,23 +30,23 @@
                                     <th scope="col">Judul acara</th>
                                     <th scope="col">Waktu Pelaksanaan</th>
                                     <th scope="col">Pengisi acara</th>
-                                    <th scope="col">status</th>
                                     <th scope="col">aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        <a href="#" class="btn btn-sm bg-gradient-red text-white">Hapus</a>
-                                        <a href="#" class="btn btn-sm bg-gradient-blue text-white">Edit</a>
-                                    </td>
-                                </tr>
+                                <?php foreach ($acara as $a) : ?>
+                                    <tr>
+                                        <td><?= ++$start; ?></td>
+                                        <td><?= $a['tanggal_acara']; ?></td>
+                                        <td><?= $a['judul_acara']; ?></td>
+                                        <td><?= $a['waktu_mulai']; ?>-<?= $a['waktu_selesai']; ?></td>
+                                        <td><?= $a['pengisi_acara']; ?></td>
+                                        <td>
+                                            <a onclick="confirm('Apakah anda ingin mnghapus data?')" href="<?= base_url('acara/hapus/') . $a['id_acara']; ?>" class="btn btn-sm bg-gradient-red text-white">Hapus</a>
+                                            <a href="<?= base_url('acara/edit/') . $a['id_acara']; ?>" class="btn btn-sm bg-gradient-blue text-white">Edit</a>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
                             </tbody>
                         </table>
                         <div class="col">

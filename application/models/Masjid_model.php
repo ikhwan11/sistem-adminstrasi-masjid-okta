@@ -31,6 +31,8 @@ class Masjid_model extends CI_Model
     // kas
     public function getKas($limit, $start)
     {
+        $this->db->get('tb_transaksi');
+        $this->db->order_by('id_transaksi', 'DESC');
         return $this->db->get('tb_transaksi', $limit, $start)->result_array();
     }
 
@@ -134,5 +136,16 @@ class Masjid_model extends CI_Model
     public function hitungNs()
     {
         return $this->db->get('tb_nasabah')->num_rows();
+    }
+
+    // acara
+    public function getAcara($limit, $start)
+    {
+        return $this->db->get('tb_acara', $limit, $start)->result_array();
+    }
+
+    public function hitungDataAcara()
+    {
+        return $this->db->get('tb_acara')->num_rows();
     }
 }

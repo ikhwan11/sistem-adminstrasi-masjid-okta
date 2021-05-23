@@ -12,7 +12,7 @@
                         <div class="col-md-6">
                             <div class="form-group text-white">
                                 <label for="tipe_transaksi">Tanggal :</label>
-                                <input type="text" class="form-control" id="tanggal_transaksi" name="tanggal_transaksi" value="<?= date('d - m - Y'); ?>" readonly>
+                                <input type="date" class="form-control" id="tanggal_transaksi" name="tanggal_transaksi">
                             </div>
                         </div>
                     </div>

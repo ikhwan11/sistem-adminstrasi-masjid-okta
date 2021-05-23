@@ -1,6 +1,6 @@
 <body>
     <!-- Sidenav -->
-    <nav class="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main">
+    <nav class=" d-print-none sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main">
         <div class="scrollbar-inner">
             <!-- Brand -->
             <div class="col mt-3">
@@ -87,9 +87,9 @@
                             <?php if ($this->uri->segment(1) == "laporan") : ?>
                             active
                             <?php endif; ?>
-                            " href="">
+                            " href="<?= base_url('laporan/'); ?>">
                                 <i class="fas fa-clipboard text-pink"></i>
-                                <span class="nav-link-text">Buat Laporan</span>
+                                <span class="nav-link-text">Laporan Bulanan</span>
                             </a>
                         </li>
                     </ul>

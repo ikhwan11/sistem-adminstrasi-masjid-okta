@@ -53,7 +53,7 @@
                         <ul>
                             <li><a href="<?= base_url('beranda/'); ?>">Beranda</a></li>
 
-                            <li><a href="<?= base_url('kas_info/'); ?>">Info kas masjid</a></li>
+                            <li><a href="<?= base_url('kas_info/'); ?>">Info Keuangan</a></li>
 
                             <li><a href="<?= base_url('auth/'); ?>">Login</a></li>
 

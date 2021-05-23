@@ -125,8 +125,8 @@ class Sedekah extends CI_Controller
 
             $this->masjid_model->insert_data($data, 'tb_transaksi');
 
-            $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible fade show" role="alert">
-				  Tambah dana berhasil!
+            $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+				  Pengeluaran dana berhasil!
 				  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
 				    <span aria-hidden="true">&times;</span>
 				  </button>

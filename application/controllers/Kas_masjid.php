@@ -84,6 +84,7 @@ class Kas_masjid extends CI_Controller
     {
         $this->form_validation->set_rules('ket', 'Keterangan', 'required', array('required' => '{field} tidak boleh kosong!'));
         $this->form_validation->set_rules('total_transaksi', 'Total kas masuk', 'required', array('required' => '{field} tidak boleh kosong!'));
+        $this->form_validation->set_rules('tanggal_transaksi', 'Tanggal', 'required', array('required' => '{field} tidak boleh kosong!'));
     }
 
 
@@ -135,5 +136,6 @@ class Kas_masjid extends CI_Controller
     {
         $this->form_validation->set_rules('ket', 'Keterangan', 'required', array('required' => '{field} tidak boleh kosong!'));
         $this->form_validation->set_rules('total_transaksi', 'Total kas masuk', 'required', array('required' => '{field} tidak boleh kosong!'));
+        $this->form_validation->set_rules('tanggal_transaksi', 'Tanggal', 'required', array('required' => '{field} tidak boleh kosong!'));
     }
 }
