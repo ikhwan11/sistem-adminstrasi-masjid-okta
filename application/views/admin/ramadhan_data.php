@@ -70,7 +70,7 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-8">
-                                        <h5 class="card-title text-uppercase text-muted mb-0">Total sisa Keuangan Ramadhan</h5>
+                                        <h5 class="card-title text-uppercase text-muted mb-0">Saldo ramadhan</h5>
                                         <span class="h2 font-weight-bold mb-0">
                                             <?php
                                             $hasil = $pemasukan->total - $pengeluaran->total;

@@ -73,7 +73,7 @@
     buttonCek.addEventListener("click", function cek(e) {
         e.preventDefault()
         var anggota = document.getElementById("anggota").value
-        var berat = anggota * 2.5
+        var berat = anggota * 2.7
 
         var beras = document.getElementById("merk_beras").value
 
@@ -96,7 +96,7 @@
         }
 
         var jumlah = berat * harga
-        document.getElementById("total_harga").value = jumlah
+        document.getElementById("total_harga").value = parseInt(jumlah)
 
     })
 </script>

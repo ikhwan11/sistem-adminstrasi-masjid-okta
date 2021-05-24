@@ -89,9 +89,7 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <button type="submit" class="btn bg-gradient-red text-white">Target tercapai</button>
                         <a href="<?= base_url('idul_adha/haji'); ?>" class="btn bg-gradient-yellow text-white">Kembali</a>
-                        <small class="text-white text-left">* tekan tombol ini jika target sudah terpenuhi</small>
                     </div>
                 </div>
             </div>

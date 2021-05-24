@@ -34,7 +34,7 @@
                         <div class="dropdown-menu  dropdown-menu-right ">
                             <a href="#!" class="dropdown-item">
                                 <div class="dropdown-divider"></div>
-                                <a href="<?= base_url('auth/logout'); ?>" class="dropdown-item">
+                                <a onclick="confirm('apakah anda yakin ingin logout?')" href="<?= base_url('auth/logout'); ?>" class="dropdown-item">
                                     <i class="fas fa-sign-out-alt"></i>
                                     <span>Logout</span>
                                 </a>
